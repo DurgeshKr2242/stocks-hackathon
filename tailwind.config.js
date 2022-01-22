@@ -7,7 +7,9 @@ module.exports = {
   darkMode: "class",
 
   theme: {
-    screens: {},
+    screens: {
+      mobileL: "425px",
+    },
     extend: {
       colors: {
         bgBlack: "#0D1117",

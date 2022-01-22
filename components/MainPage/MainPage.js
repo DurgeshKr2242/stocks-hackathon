@@ -1,44 +1,76 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { FcPositiveDynamic } from "react-icons/fc";
+import { FcNegativeDynamic } from "react-icons/fc";
+import { FcNeutralTrading } from "react-icons/fc";
+import axios from "axios";
+import News from "./News";
 const MainPage = () => {
+  const [sentimentPositive, setSentimentPositive] = useState(0);
+  const [sentimentNeutral, setSentimentNeutral] = useState(0);
+  const [sentimentNegative, setSentimentNegative] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const getSentiment = async () => {
+    const res = await axios.get(`http://127.0.0.1:5000/${searchTerm}`);
+    console.log(res.data.Positive);
+    console.log(res.data.Neutral);
+    console.log(res.data.Negative);
+    setSentimentPositive(res.data.Positive);
+    setSentimentNeutral(res.data.Neutral);
+    setSentimentNegative(res.data.Negative);
+    //   setSentiment(res.data.Positive);
+    //   console.log(sentiment.Positive);
+  };
+
   return (
-    <div className="flex flex-col items-center gap-20 ">
-      <header className="bg-bgBlackSec py-20 w-full flex justify-center">
+    <div className="flex flex-col items-center gap-10">
+      <header className="bg-bgBlackSec py-20 w-full flex justify-center mobileL:px-0 px-4">
         <input
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           type="text"
           placeholder="Company code"
-          className="bg-bgBlack border-[1px] tracking-wide border-bgWhiteSec/30 rounded-l-md py-1 px-2 min-w-[230px]"
+          className="bg-bgBlack border-[1px] tracking-wide border-gray-300/30 rounded-l-md py-1 px-2 min-w-[230px]"
         />
-        <button className="bg-green-700 tracking-wide text-sm text-white font-bold px-3 rounded-r-md">
+        <button
+          onClick={getSentiment}
+          className="bg-green-700 tracking-wide text-sm text-white font-bold px-3 rounded-r-md"
+        >
           Get Analytics
         </button>
       </header>
-      <div className="flex gap-10 flex-wrap">
-        <div className="flex flex-col items-center max-w-md">
-          <div>
-            <img
-              className="max-w-sm min-w-sm"
-              src="https://s.yimg.com/os/creatr-uploaded-images/2022-01/d16b6010-7ae4-11ec-bf9f-eb33b1461c99"
-              alt="newss"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="text-lg font-bold text-center">
-              Godzilla is headed to Apple TV+ in the MonsterVerse’s first
-              live-action series
-            </p>
-            <p className="text-base text-center font-bold text-gray-700">
-              -Engadget
-            </p>
 
-            <p className="text-sm">
-              Legendary Pictures has been trying to make the MonsterVerse a
-              thing for a while now, and following Godzilla and King Kong’s
-              return to the movie theaters back in 2014, kaiju are now heading
-              to the small screen in an upcoming series on Apple TV+.Not content
-              t…
+      {/* 
+            SHOWWWW
+     */}
+
+      <div className="flex flex-col items-center w-full gap-12">
+        <div className="flex gap-6 mobileL:flex-row flex-col">
+          <p className="bg-bgBlackSec border-[1px] flex items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
+            <p className="text-white font-bold">
+              {(sentimentPositive * 100).toPrecision(2)}
             </p>
-          </div>
+            Positive
+            <FcPositiveDynamic />
+          </p>
+
+          <p className="bg-bgBlackSec border-[1px] flex-nowrap flex items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
+            <p className="text-white font-bold">
+              {(sentimentNeutral * 100).toPrecision(2)}
+            </p>
+            Neutral
+            <FcNeutralTrading />
+          </p>
+          <p className="bg-bgBlackSec border-[1px] flex items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
+            <p className="text-white font-bold">
+              {(sentimentNegative * 100).toPrecision(2)}
+            </p>
+            Negative
+            <FcNegativeDynamic />
+          </p>
+        </div>
+        <div className="flex gap-10 flex-wrap">
+          <News />
         </div>
       </div>
     </div>
