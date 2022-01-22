@@ -10,8 +10,8 @@ module.exports = {
     screens: {},
     extend: {
       colors: {
-        bgblack: "#0D1117",
-        bgBlackSec: "#141921",
+        bgBlack: "#0D1117",
+        bgBlackSec: "#161B22",
         bgWhiteSec: "#f0f1f2",
         bgyellow: "#FCDC60",
       },
