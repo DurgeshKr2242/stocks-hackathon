@@ -98,63 +98,63 @@ const MainPage = () => {
           <div className="flex gap-6 flex-wrap mobileL:flex-row flex-col w-full justify-center">
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Symbol :
-              <p className="text-white font-bold">{companyQuote.symbol}</p>
+              <p className="text-white font-bold">{companyQuote?.symbol}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
-              Name :<p className="text-white font-bold">{companyQuote.name}</p>
+              Name :<p className="text-white font-bold">{companyQuote?.name}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Price :
-              <p className="text-white font-bold">{companyQuote.price}</p>
+              <p className="text-white font-bold">{companyQuote?.price}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               % change :
               <p className="text-white font-bold">
-                {companyQuote.changesPercentage}
+                {companyQuote?.changesPercentage}
               </p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Change :
-              <p className="text-white font-bold">{companyQuote.change}</p>
+              <p className="text-white font-bold">{companyQuote?.change}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Day Low :
-              <p className="text-white font-bold">{companyQuote.dayLow}</p>
+              <p className="text-white font-bold">{companyQuote?.dayLow}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Day High :
-              <p className="text-white font-bold">{companyQuote.dayHigh}</p>
+              <p className="text-white font-bold">{companyQuote?.dayHigh}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Year Low :
-              <p className="text-white font-bold">{companyQuote.yearLow}</p>
+              <p className="text-white font-bold">{companyQuote?.yearLow}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Year High :
-              <p className="text-white font-bold">{companyQuote.yearHigh}</p>
+              <p className="text-white font-bold">{companyQuote?.yearHigh}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Market Cap :
-              <p className="text-white font-bold">{companyQuote.marketCap}</p>
+              <p className="text-white font-bold">{companyQuote?.marketCap}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Volume :
-              <p className="text-white font-bold">{companyQuote.volume}</p>
+              <p className="text-white font-bold">{companyQuote?.volume}</p>
             </div>
 
             <div className="bg-bgBlackSec border-[1px] flex flex-nowrap items-center gap-2 border-gray-300/30 py-1 px-4 rounded-md text-bgWhiteSec/80">
               Exchange :
-              <p className="text-white font-bold">{companyQuote.exchange}</p>
+              <p className="text-white font-bold">{companyQuote?.exchange}</p>
             </div>
           </div>
         </div>
